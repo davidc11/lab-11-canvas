@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body onload = "draw()">
+<canvas id = "sketch" width = "1500" height = "1500">
+<canvas>
+<script>
+function draw() {
+
+	var sketch = document.getElementById('sketch');
+	var context = sketch.getContext("2d")
+
+  var SxAxis = 50
+	var CxAxis = 28
+	var UserNum = parseInt(prompt("Give me a number"))
+	for(i = 0; i < UserNum; i++) {
+		context.fillStyle = "#00ff00";
+		context.fillRect(SxAxis, 50, 25, 25)
+		SxAxis = SxAxis + 70
+		CxAxis = CxAxis + 70
+	context.fillStyle = "blue";
+			context.beginPath();
+			context.arc(CxAxis, 60, 15, 0, 2 * Math.PI, true);
+			context.closePath();
+			context.fill();
+	}
+
+}
+</script>
+</body>
+</html>
