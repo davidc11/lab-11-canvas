@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body onload = "draw()">
+<canvas id = "sketch" width = "1000" height = "1000">
+<canvas>
+<script>
+function draw() {
+
+	var sketch = document.getElementById('sketch');
+	var context = sketch.getContext("2d")
+	var numCircle = parseInt(prompt("How many circle in a row do you want?"))
+	context.fillStyle = "blue";
+	var xAxis = 100
+	for(i = 0; i < numCircle; i++) {
+		context.beginPath();
+		context.arc(xAxis, 100, 20, 0, 2 * Math.PI, true);
+		context.closePath();
+		context.fill();
+		xAxis = xAxis + 50
+	}
+	
+}
+</script>
+</body>
+</html>
