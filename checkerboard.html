@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body onload = "draw()">
+<canvas id = "sketch" width = "500" height = "500">
+<canvas>
+<script>
+function draw() {
+
+	var sketch = document.getElementById('sketch');
+	var context = sketch.getContext("2d")
+
+	context.rect(1, 1, 400, 400);
+  context.stroke();
+	var rows = 8;
+	var columns = 8
+	var widthOfCheckerboardSquares = 50
+
+	for(var i = 0; i < rows; i = i + 1){
+	for(var j = 0; j < columns; j = j + 1){
+		var x = (j * widthOfCheckerboardSquares) + 1;
+	    var y = (i * widthOfCheckerboardSquares) + 1;
+			if(i % 2 === 0){
+				if(j % 2 === 0) {
+         context.fillStyle = 'white';
+       } else {
+
+         context.fillStyle = 'black';
+
+       }
+
+    } else {
+			if(j % 2 === 0){
+        context.fillStyle = 'black';
+      }
+      else {
+        context.fillStyle = 'white';
+      }
+    }
+
+    context.fillRect(x, y, widthOfCheckerboardSquares, widthOfCheckerboardSquares);
+  }
+
+}
+}
+</script>
+</body>
+</html>
