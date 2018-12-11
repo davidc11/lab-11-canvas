@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body onload = "draw()">
+<canvas id = "sketch" width = "1500" height = "1500">
+<canvas>
+<script>
+function draw() {
+	var sketch = document.getElementById('sketch');
+
+	var context = sketch.getContext("2d")
+	Xaxis = 50
+	Yaxis = 50
+	radius = 5
+	for(i = 0; i < 25; i++) {
+	context.fillStyle = "grey";
+			
+			context.beginPath();
+			context.arc(Xaxis, Yaxis, radius, 0, 2 * Math.PI, true);
+			context.closePath();
+			context.fill();
+
+			Xaxis = Xaxis + 10
+			Yaxis = Yaxis + 10
+			radius = radius + 5
+
+			context.fillStyle = "red";
+			context.beginPath();
+			context.arc(Xaxis, Yaxis, radius, 0, 2 * Math.PI, true);
+			context.closePath();
+			context.fill();
+
+			Xaxis = Xaxis + 10
+			Yaxis = Yaxis + 10
+			radius = radius + 5
+	}
+	context.fillStyle = "blue";
+	context.beginPath();
+			context.arc(Xaxis, Yaxis, radius, 0, 2 * Math.PI, true);
+			context.closePath();
+			context.fill();
+
+
+}
+</script>
+</body>
+</html>
